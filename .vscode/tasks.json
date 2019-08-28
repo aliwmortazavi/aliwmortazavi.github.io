@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "command": "gulp",
+  "tasks": [
+    {
+      "label": "sass",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "type": "shell",
+      "problemMatcher": [
+        "$node-sass"
+      ]
+    }
+  ]
+}

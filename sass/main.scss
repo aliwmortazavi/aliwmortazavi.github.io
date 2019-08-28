@@ -1,0 +1,307 @@
+@import 'jacket';
+$navbar-breakpoint: 645px;
+$navbar-breakpoint-smaller: 520px;
+$navbar-breakpoint-xs: 460px;
+
+$bg-color: #f9f9ff;
+$primary-color: #444c5c;
+
+$secondary-color: #acbebe;
+$gradient-left: #84fab0;
+$gradient-right: #8fd3f4;
+$highlight-color: $gradient-left;
+$ease: cubic-bezier(.2,1,.3,1);
+
+$night-primary-color: #EFF1F3;
+// kiv colors: E1FAF9, EFF1F3
+$night-bg-color: #2A324B;
+$night-gradient-left: #bc4e9c;
+$night-gradient-right: #f80759;
+$night-highlight-color: $night-gradient-right;
+$night-border-color: #697481;
+
+
+@include jacket(non-critical) {
+  /* latin */
+  @font-face {
+    font-family: 'Libre Baskerville';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Libre Baskerville Italic'), local('LibreBaskerville-Italic'), url(https://fonts.gstatic.com/s/librebaskerville/v5/kmKhZrc3Hgbbcjq75U4uslyuy4kn0qNcWxEQDA.woff2) format('woff2');
+    font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+  
+  #go-to-header {
+    position: fixed;
+    bottom: 48px;
+    right: 16px;
+    z-index: 999;
+    
+    svg {
+      transform: rotate(90deg);
+      width: 25px;
+      height: auto;
+      cursor: pointer;
+      overflow: visible;
+      padding: 14px;
+      polygon, path {
+        transition: all 0.5s $ease;
+      }
+    }
+  }
+
+  
+  body.day-mode {
+    #go-to-header {
+      // DESKTOP ONLY ANIMATION
+      @media screen and (min-width: $navbar-breakpoint) {
+        &:hover polygon, &:hover path {
+          fill: $highlight-color;
+        }
+      }
+    }
+  }
+
+  body.night-mode {
+    #go-to-header {
+      // DESKTOP ONLY ANIMATION
+      @media screen and (min-width: $navbar-breakpoint) {
+        &:hover polygon, &:hover path {
+          fill: $night-highlight-color;
+        }
+      }
+    }
+  }
+
+  #go-to-header {
+    // DESKTOP ONLY ANIMATION
+    @media screen and (min-width: $navbar-breakpoint) {
+      &:hover polygon, &:hover path {
+        transition: all 1s $ease;
+      }
+        
+      &:hover .arrow {
+        animation: arrow-anim 2.5s $ease infinite;
+      }
+      &:hover .arrow-fixed {
+        animation: arrow-fixed-anim 2.5s $ease infinite;
+      }
+    }
+  }
+
+  @keyframes arrow-anim {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    5% {
+      transform: translateX(-0.1rem);
+    }
+    100% {
+      transform: translateX(1rem);
+      opacity: 0;
+    }
+  }
+
+  @keyframes arrow-fixed-anim {
+    5% {
+      opacity: 0;
+    }
+    20% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 1;
+    }
+
+    a {
+      text-decoration: none;
+      color: rgba($primary-color, 1);
+
+      &:hover {
+        color: rgba($primary-color, .5);
+      }
+    }
+  }
+
+  body.day-mode {
+    ::selection {
+      background: #fef9d8;
+    }
+  }
+
+  body.night-mode {
+    ::selection {
+      background: #9CADCE;
+    }
+  }
+}
+
+@include jacket(critical) {
+  /* latin */
+  @font-face {
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Inconsolata Regular'), local('Inconsolata-Regular'), url(https://fonts.gstatic.com/s/inconsolata/v16/QldKNThLqRwH-OJ1UHjlKGlZ5qg.woff2) format('woff2');
+    font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Libre Baskerville';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Libre Baskerville'), local('LibreBaskerville-Regular'), url(https://fonts.gstatic.com/s/librebaskerville/v5/kmKnZrc3Hgbbcjq75U4uslyuy4kn0qNZaxM.woff2) format('woff2');
+    font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Libre Baskerville';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Libre Baskerville Bold'), local('LibreBaskerville-Bold'), url(https://fonts.gstatic.com/s/librebaskerville/v5/kmKiZrc3Hgbbcjq75U4uslyuy4kn0qviTgY3KcA.woff2) format('woff2');
+    font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Radley';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Radley Italic'), local('Radley-Italic'), url(https://fonts.gstatic.com/s/radley/v12/LYjBdGzinEIjCN1NojNHjV8.woff2) format('woff2');
+    font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Radley';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Radley Regular'), local('Radley-Regular'), url(https://fonts.gstatic.com/s/radley/v12/LYjDdGzinEIjCN1NpwNF.woff2) format('woff2');
+    font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+  body.day-mode {
+    background: $bg-color !important;
+
+    .light-triangle {
+      border-color: rgba(246,244,246,0.7) transparent transparent transparent;
+
+      .border {
+        border: 2px solid rgba(238,233,237,0.8);
+      }
+    }
+
+    #go-to-header {
+      background: rgba(#F6F4F6, 0.7);
+      border: 2px solid rgba(238, 233, 237, 0.8);
+
+      svg {
+        fill: $primary-color;
+      }
+    }
+  }
+
+  body.night-mode {
+    background: $night-bg-color !important;
+
+    .light-triangle {
+      border-color: rgba(72,86,101,0.7) transparent transparent transparent;
+
+      .border {
+        border: 2px solid rgba(105,116,129,0.8);
+      }
+    }
+
+    #go-to-header {
+      background: rgba(#485665, 0.7);
+      border: 2px solid rgba($night-border-color, .8);
+
+
+      svg {
+        fill: $night-primary-color;
+      }
+    }
+  }
+
+  body {
+    transition: 0.5s all cubic-bezier(0.65, 0.05, 0.36, 1);
+
+    .light-triangle {
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 70px 70px 0 0;
+
+      .border {
+        height: 70px;
+        position: fixed;
+        width: 120px;
+        left: -60px;
+        top: -20px;
+        transform: rotate(-45deg);
+      }
+
+      .light-toggle {
+        position: absolute;
+        top: -60px;
+
+        .moon-icon,
+        .sun-icon {
+          &.off {
+            display: none;
+          }
+        }
+
+        #dayIcon, #nightIcon {
+          cursor: pointer;
+        }
+
+        #dayIcon {
+          position: relative;
+          width: 26px;
+          height: 26px;
+          top: -3px;
+          margin: 0 7px;
+          fill: $primary-color;
+          // fill: #9caec0;
+        }
+
+        #nightIcon {
+          position: relative;
+          width: 26px;
+          height: 26px;
+          top: -3px;
+          margin: 0 7px;
+          fill: $night-primary-color;
+          // fill: #9caec0;
+        }
+
+        .toggle {
+          display: none;
+        }
+      }
+    }
+  }
+
+  section {
+    margin-bottom: 2em;
+  }
+}
+
+@import 'navbar';
+@import 'content';
+@import 'intro';
+@import 'experience';
+@import 'projects';
+@import 'contact';
+@import 'footer';
