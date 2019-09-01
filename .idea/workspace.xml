@@ -27,18 +27,18 @@
         <subPane>
           <expand>
             <path>
-              <item name="karrui.github.io-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="karrui.github.io-master" type="462c0819:PsiDirectoryNode" />
+              <!--<item name="karrui.github.io-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="karrui.github.io-master" type="462c0819:PsiDirectoryNode" />-->
             </path>
             <path>
-              <item name="karrui.github.io-master" type="b2602c69:ProjectViewProjectNode" />
+              <!--<item name="karrui.github.io-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="karrui.github.io-master" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />-->
             </path>
             <path>
-              <item name="karrui.github.io-master" type="b2602c69:ProjectViewProjectNode" />
+              <!--<item name="karrui.github.io-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="karrui.github.io-master" type="462c0819:PsiDirectoryNode" />
-              <item name="styles" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />-->
             </path>
           </expand>
           <select />
